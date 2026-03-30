@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00ff88" stroke-width="0.5" opacity="0.08"/>
+    </pattern>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#0066ff;stop-opacity:0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="#0a0a0f"/>
+  <rect width="1280" height="640" fill="url(#grid)"/>
+  <rect width="1280" height="640" fill="url(#glow)"/>
+
+  <!-- Border -->
+  <rect x="2" y="2" width="1276" height="636" rx="0" fill="none" stroke="#222230" stroke-width="2"/>
+
+  <!-- Accent line top -->
+  <rect x="0" y="0" width="1280" height="3" fill="#00ff88"/>
+
+  <!-- Logo -->
+  <text x="100" y="200" font-family="monospace" font-size="80" font-weight="900" fill="#e8e8f0" letter-spacing="-3">File<tspan fill="#00ff88">Vault</tspan></text>
+
+  <!-- Tagline -->
+  <text x="102" y="258" font-family="monospace" font-size="22" fill="#666680" letter-spacing="2">// COMPARTE ARCHIVOS CON TOKEN SEGURO · SIN LÍMITE DE DESCARGAS</text>
+
+  <!-- Token example box -->
+  <rect x="100" y="310" width="440" height="80" rx="6" fill="#16161f" stroke="#222230" stroke-width="1.5"/>
+  <text x="130" y="340" font-family="monospace" font-size="11" fill="#666680" letter-spacing="3">TOKEN DE ACCESO</text>
+  <text x="130" y="375" font-family="monospace" font-size="28" font-weight="700" fill="#00ff88" letter-spacing="8">A3F7 — K9P2 — X1M8</text>
+
+  <!-- Features -->
+  <text x="100" y="460" font-family="monospace" font-size="16" fill="#e8e8f0">✓  Token único generado automáticamente</text>
+  <text x="100" y="490" font-family="monospace" font-size="16" fill="#e8e8f0">✓  Límite de subida: 500 MB por archivo</text>
+  <text x="100" y="520" font-family="monospace" font-size="16" fill="#e8e8f0">✓  Descarga ilimitada · Sin registro · Sin dependencias</text>
+
+  <!-- Right side decoration -->
+  <rect x="780" y="120" width="380" height="400" rx="8" fill="#111118" stroke="#222230" stroke-width="1.5"/>
+  <rect x="780" y="120" width="380" height="42" rx="8" fill="#16161f"/>
+  <rect x="780" y="148" width="380" height="14" fill="#16161f"/>
+  <circle cx="810" cy="141" r="7" fill="#ff3355" opacity="0.7"/>
+  <circle cx="833" cy="141" r="7" fill="#ffaa00" opacity="0.7"/>
+  <circle cx="856" cy="141" r="7" fill="#00ff88" opacity="0.7"/>
+
+  <text x="900" y="145" font-family="monospace" font-size="11" fill="#666680" text-anchor="middle" letter-spacing="1">filevault · index.html</text>
+
+  <!-- Fake code lines -->
+  <text x="808" y="200" font-family="monospace" font-size="13" fill="#666680">&lt;!-- FileVault --&gt;</text>
+  <text x="808" y="226" font-family="monospace" font-size="13" fill="#00ff88">const token = generateToken();</text>
+  <text x="808" y="252" font-family="monospace" font-size="13" fill="#e8e8f0">// <tspan fill="#66aaff">A3F7-K9P2-X1M8</tspan></text>
+  <text x="808" y="278" font-family="monospace" font-size="13" fill="#666680">Vault.store(token, fileData);</text>
+  <text x="808" y="304" font-family="monospace" font-size="13" fill="#e8e8f0">// sin límite de descargas</text>
+  <text x="808" y="330" font-family="monospace" font-size="13" fill="#00ff88">Vault.get(token) → file ✓</text>
+
+  <!-- Badge -->
+  <rect x="808" y="370" width="120" height="28" rx="3" fill="rgba(0,255,136,0.1)" stroke="rgba(0,255,136,0.3)" stroke-width="1"/>
+  <text x="868" y="389" font-family="monospace" font-size="11" fill="#00ff88" text-anchor="middle" letter-spacing="1">0 DEPS</text>
+
+  <rect x="940" y="370" width="100" height="28" rx="3" fill="rgba(0,102,255,0.1)" stroke="rgba(0,102,255,0.3)" stroke-width="1"/>
+  <text x="990" y="389" font-family="monospace" font-size="11" fill="#66aaff" text-anchor="middle" letter-spacing="1">HTML/CSS/JS</text>
+
+  <rect x="808" y="408" width="160" height="28" rx="3" fill="rgba(255,170,0,0.08)" stroke="rgba(255,170,0,0.25)" stroke-width="1"/>
+  <text x="888" y="427" font-family="monospace" font-size="11" fill="#ffaa00" text-anchor="middle" letter-spacing="1">MAX 500MB UPLOAD</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="610" width="1280" height="30" fill="#111118"/>
+  <text x="100" y="630" font-family="monospace" font-size="11" fill="#444460" letter-spacing="1">FILEVAULT — DEMO LOCAL · ARCHIVOS EN SESIÓN</text>
+  <circle cx="1230" cy="625" r="5" fill="#00ff88"/>
+  <text x="1200" y="629" font-family="monospace" font-size="11" fill="#00ff88" text-anchor="end" letter-spacing="1">ACTIVO</text>
+</svg>

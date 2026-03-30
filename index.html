@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FileVault — Subir archivo</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="container">
+
+  <header class="header">
+    <a href="index.html" class="logo">File<span>Vault</span></a>
+    <nav class="nav">
+      <a href="index.html" class="nav-link active">↑ Subir</a>
+      <a href="download.html" class="nav-link">↓ Descargar</a>
+      <a href="about.html" class="nav-link">Info</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="hero-tag">// subir archivo</div>
+      <h1 class="hero-title">Sube y comparte<br>con <em>token seguro</em></h1>
+      <p class="hero-sub">Sube cualquier archivo hasta 500 MB · Recibes un token único · Compártelo para descargar sin límites</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Seleccionar archivo</div>
+
+      <div class="dropzone" id="dropzone" onclick="document.getElementById('fileInput').click()">
+        <div class="drop-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect x="1" y="1" width="38" height="38" rx="3" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <path d="M20 26V14M20 14L15 19M20 14L25 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="drop-text">Arrastra aquí o haz clic para seleccionar</div>
+        <div class="drop-sub">Cualquier tipo de archivo · Máx. <strong>500 MB</strong></div>
+        <input type="file" id="fileInput" onchange="onFileSelect(event)">
+      </div>
+
+      <div class="file-info" id="fileInfo">
+        <span class="file-icon" id="fileIcon">📄</span>
+        <div class="file-details">
+          <div class="file-name" id="fileName">—</div>
+          <div class="file-size" id="fileSize">—</div>
+        </div>
+        <button class="file-remove" onclick="clearFile()">✕ Quitar</button>
+      </div>
+
+      <div class="progress-wrap" id="progressWrap">
+        <div class="progress-label">
+          <span id="progressStatus">Procesando...</span>
+          <span id="progressPct">0%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+
+      <div class="msg msg-error" id="uploadError"></div>
+
+      <button class="btn btn-primary" id="uploadBtn" disabled onclick="uploadFile()">
+        <span>Generar token y subir archivo</span>
+      </button>
+
+      <div class="result-box" id="resultBox">
+        <div class="result-title">Archivo listo para compartir</div>
+        <div class="token-display">
+          <div class="token-label">Token de acceso único</div>
+          <div class="token-row">
+            <span class="token-value" id="tokenValue">—</span>
+            <button class="copy-btn" id="copyTokenBtn" onclick="copyToken()">Copiar</button>
+          </div>
+        </div>
+        <div class="token-display">
+          <div class="token-label">Archivo</div>
+          <div class="token-value small" id="resultFileName">—</div>
+        </div>
+        <div class="result-warning">
+          ⚠ Guarda este token. Sin él, no podrás acceder al archivo.<br>
+          Compártelo solo con quienes deban descargar el archivo.
+        </div>
+        <a href="download.html" class="btn btn-outline" style="margin-top:16px;display:block;text-align:center;text-decoration:none;">
+          Ir a descargar con token →
+        </a>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-num" id="statFiles">0</div>
+        <div class="stat-label">Archivos subidos</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="statSize">0 B</div>
+        <div class="stat-label">Total en sesión</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">500</div>
+        <div class="stat-label">MB límite/archivo</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>FileVault · Demo local · archivos en memoria de sesión</span>
+    <span class="status-dot">Sistema activo</span>
+  </footer>
+
+</div>
+<script src="vault.js"></script>
+<script src="upload.js"></script>
+</body>
+</html>
