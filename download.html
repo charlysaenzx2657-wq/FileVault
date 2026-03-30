@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FileVault — Descargar</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="container">
+
+  <header class="header">
+    <a href="../index.html" class="logo">File<span>Vault</span></a>
+    <nav class="nav">
+      <a href="../index.html" class="nav-link">↑ Subir</a>
+      <a href="download.html" class="nav-link active">↓ Descargar</a>
+      <a href="about.html" class="nav-link">Info</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="hero-tag">// descargar archivo</div>
+      <h1 class="hero-title">Introduce tu<br><em>token de acceso</em></h1>
+      <p class="hero-sub">Sin límite de descargas · Solo necesitas el token para acceder al archivo</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Acceder con token</div>
+
+      <div class="input-group">
+        <label class="input-label">Token de acceso</label>
+        <div class="token-input-wrap">
+          <input type="text" class="token-input" id="tokenInputField"
+            placeholder="Ej: A3F7-K9P2-X1M8"
+            maxlength="14"
+            oninput="formatTokenInput(this)"
+            onkeydown="if(event.key==='Enter') verifyToken()">
+          <div class="token-input-icon">🔑</div>
+        </div>
+      </div>
+
+      <div class="msg msg-error" id="downloadError"></div>
+      <div class="msg msg-success" id="downloadSuccess"></div>
+
+      <div class="file-found-box" id="fileFoundBox">
+        <div class="found-header">
+          <span class="found-icon" id="foundIcon">📄</span>
+          <div>
+            <div class="found-name" id="foundFileName">—</div>
+            <div class="found-size" id="foundFileSize">—</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-secondary" onclick="verifyToken()">
+        <span>Verificar token y descargar</span>
+      </button>
+    </div>
+
+    <div class="info-box">
+      <div class="info-box-title">¿Cómo funciona?</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-text">
+            <strong>Recibe el token</strong>
+            <span>Quien subió el archivo te envía su token único (formato XXXX-XXXX-XXXX)</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-text">
+            <strong>Introduce el token</strong>
+            <span>Pégalo en el campo de arriba exactamente como te lo enviaron</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-text">
+            <strong>Descarga el archivo</strong>
+            <span>Sin límite de descargas ni de velocidad. El archivo se descarga directamente</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>FileVault · Demo local · archivos en memoria de sesión</span>
+    <span class="status-dot">Sistema activo</span>
+  </footer>
+
+</div>
+
+<script src="../js/vault.js"></script>
+<script src="../js/download.js"></script>
+</body>
+</html>
